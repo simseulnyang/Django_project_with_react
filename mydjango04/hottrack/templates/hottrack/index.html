@@ -1,3 +1,5 @@
+{% load django_bootstrap5 %}
+
 <!doctype html>
 <html lang="ko" data-bs-theme="dark">
 <head>
@@ -86,6 +88,11 @@
                         {% include "hottrack/_song.html" with song=song only%}
                     </div>
                 {% endfor %}
+                </div>
+
+                {% comment %} {% include "hottrack/_pagination.html" with page_obj=page_obj only %} {% endcomment %}
+                <div class="my-5 d-flex justify-content-center">
+                    {% bootstrap_pagination page_obj %}
                 </div>
             </div>
         </div>
